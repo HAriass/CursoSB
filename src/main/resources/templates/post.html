@@ -35,31 +35,13 @@
         </div>
     </nav>
     <div class="container">
-      <h1 class="display-4">Hello, world!</h1>
-      <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+      <h1 th:text="${post.titulo}" class="display-4">Hello, world!</h1>
+      <p th:text="${post.descripcion}" class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
       <hr class="my-4">
-      <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+      <p th:text="${post.fecha}">It uses utility classes for typography and spacing to space content out within the larger container.</p>
       <p class="lead">
         <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
       </p>
-    </div>
-
-
-
-    <div class="container">
-      <div class="row">
-            <!--CARDS-->
-        <div th:each="post: ${posts}" class="col-3">
-          <div class="card" style="width: 18rem;">
-                <img th:src="${post.urlImg}" class="card-img-top" alt="..."/>
-                    <div class="card-body">
-                      <h5 th:text="${post.titulo}" class="card-title"></h5>
-                      <p th:text="${post.descripcion}" class="card-text"></p>
-                      <a th:href="@{/home/post?id=}+${post.id}" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 
         
@@ -88,5 +70,6 @@
     <footer>
         <p>HernanArias</p>
     </footer>
+
 </body>
 </html>
